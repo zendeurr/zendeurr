@@ -64,7 +64,7 @@ max = {
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark&hide_border=true&include_all_commits=true&count_private=true"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark"/>
 <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zendeurr&layout=compact&theme=chartreuse-dark&hide_border=true"/>
 
 </div>
