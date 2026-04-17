@@ -23,10 +23,10 @@
 
 ```python
 max = {
-    "focus"     : ["Crypto Scalping", "Web Dev", "Data & Python"],
-    "markets"   : ["BTC", "ETH", "SOL"],
-    "timeframes": ["1m", "5m", "15m"],
-    "stack"     : ["Pine Script", "Next.js", "React", "Python", "Vercel"],
+    "focus"     : ["Swing Trading", "Crypto enthusiast", "AI Projects"],
+    "markets"   : ["BTC", "SOL", "ALTS"],
+    "timeframes": ["5m", "15m", "1h", "4h"],
+    "stack"     : ["Pine Script", "Oracle", "Python", "Vercel"],
     "currently" : "Building a trading dashboard + sharpening my edge 📊",
     "motto"     : "Protect the capital. Let the profits run. 🎯"
 }
@@ -36,7 +36,7 @@ max = {
 
 ## 📊 Trading & Pine Script
 
-> Scalper on short timeframes, focused on **BTC / ETH / SOL** — capital preservation first.
+> Crypto trader on medium/long timeframes, focused on **BTC / SOL / ALTCOINS** — capital preservation first.
 
 - 📐 **Market Structure** — HH/HL/LH/LL pattern recognition
 - 🧪 **Backtesting** — iterative strategy refinement on TradingView
@@ -51,10 +51,6 @@ max = {
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 ![Pine Script](https://img.shields.io/badge/Pine_Script-00C176?style=for-the-badge&logo=tradingview&logoColor=white)
@@ -81,7 +77,7 @@ max = {
 
 ---
 
-## 🔥 En ce moment
+## 🔥 What am I doing right now?
 
 - 🏗️ **Trading Dashboard** — Next.js · Notion API · KPIs (Win Rate, P&L, R/R)
 - 📊 **Pine Script v5/v6** — scalping strategies on crypto
