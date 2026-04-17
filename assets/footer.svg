@@ -1,79 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" width="900" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-label="Footer — noise fades edge compounds">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
+    <style type="text/css"><![CDATA[
       .bg { fill: #080b0f; }
-      .grid { stroke: #0d2b1a; stroke-width: 0.7; }
+      .grid { stroke: #0f1f18; stroke-width: 0.7; opacity: 0.85; }
       .wick { stroke: #00c853; stroke-width: 1.2; }
       .bull { fill: #00c853; }
-      .bear { fill: #0a0a0a; stroke: #00c853; stroke-width: 1; }
-      .glowline { fill: none; stroke: #00ff6a; stroke-width: 1.5; opacity: 0.6; filter: url(#glow); }
-      .quote { font-family: 'Share Tech Mono', monospace; fill: #3ddc84;
-               font-size: 12px; letter-spacing: 1.5px; }
-      .dim { font-family: 'Share Tech Mono', monospace; fill: #1e5c38; font-size: 10px; }
-      .fadeUp { animation: fadeUp 1s ease 0.3s forwards; opacity: 0; }
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(5px); }
-        to   { opacity: 1; transform: translateY(0); }
+      .bear { fill: #0a1210; stroke: #00c853; stroke-width: 1; }
+      .trendLine {
+        fill: none;
+        stroke: #00ff6a;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: url(#lineGlow);
+        animation: lineShimmer 2.6s ease-in-out infinite;
       }
-      @keyframes pulse { 0%,100%{opacity:.5} 50%{opacity:1} }
-      .pulse { animation: pulse 2.5s ease infinite; }
-    </style>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      .marker {
+        fill: #00c853;
+        animation: markerPulse 2s ease-in-out infinite;
+      }
+      .sig {
+        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
+        fill: #00c853;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+      }
+      .meta {
+        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
+        fill: #1e5c38;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+      }
+      .fadeA { animation: fadeUp 0.85s ease 0.2s forwards; opacity: 0; }
+      .fadeB { animation: fadeUp 0.85s ease 0.55s forwards; opacity: 0; }
+      .fadeC { animation: fadeUp 0.85s ease 0.85s forwards; opacity: 0; }
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes lineShimmer {
+        0%, 100% { stroke-opacity: 0.55; }
+        50% { stroke-opacity: 1; }
+      }
+      @keyframes markerPulse {
+        0%, 100% { opacity: 0.65; }
+        50% { opacity: 1; }
+      }
+    ]]></style>
+    <filter id="lineGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
-    <linearGradient id="fadeout" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="edgeFade" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#080b0f" stop-opacity="1"/>
-      <stop offset="12%" stop-color="#080b0f" stop-opacity="0"/>
-      <stop offset="88%" stop-color="#080b0f" stop-opacity="0"/>
+      <stop offset="10%" stop-color="#080b0f" stop-opacity="0"/>
+      <stop offset="90%" stop-color="#080b0f" stop-opacity="0"/>
       <stop offset="100%" stop-color="#080b0f" stop-opacity="1"/>
     </linearGradient>
-    <mask id="m"><rect width="900" height="100" fill="url(#fadeout)"/></mask>
+    <mask id="edgeMask">
+      <rect width="1200" height="140" fill="url(#edgeFade)"/>
+    </mask>
   </defs>
 
-  <rect width="900" height="100" class="bg"/>
+  <rect class="bg" width="1200" height="140"/>
 
-  <!-- MINI GRID -->
-  <line x1="0" y1="25" x2="900" y2="25" class="grid"/>
-  <line x1="0" y1="50" x2="900" y2="50" class="grid"/>
-  <line x1="0" y1="75" x2="900" y2="75" class="grid"/>
-
-  <!-- MINI CANDLES dispersées -->
-  <g mask="url(#m)">
-    <line x1="30"  y1="15" x2="30"  y2="65" class="wick"/>
-    <line x1="60"  y1="18" x2="60"  y2="60" class="wick"/>
-    <line x1="90"  y1="12" x2="90"  y2="55" class="wick"/>
-    <line x1="120" y1="20" x2="120" y2="58" class="wick"/>
-    <line x1="150" y1="10" x2="150" y2="50" class="wick"/>
-    <rect x="24"  y="32" width="12" height="22" class="bull"/>
-    <rect x="54"  y="28" width="12" height="20" class="bear"/>
-    <rect x="84"  y="25" width="12" height="20" class="bull"/>
-    <rect x="114" y="30" width="12" height="18" class="bear"/>
-    <rect x="144" y="22" width="12" height="18" class="bull"/>
-
-    <line x1="740" y1="15" x2="740" y2="62" class="wick"/>
-    <line x1="770" y1="12" x2="770" y2="55" class="wick"/>
-    <line x1="800" y1="18" x2="800" y2="58" class="wick"/>
-    <line x1="830" y1="8"  x2="830" y2="50" class="wick"/>
-    <line x1="860" y1="14" x2="860" y2="52" class="wick"/>
-    <rect x="734" y="30" width="12" height="20" class="bull"/>
-    <rect x="764" y="24" width="12" height="20" class="bull"/>
-    <rect x="794" y="28" width="12" height="18" class="bear"/>
-    <rect x="824" y="18" width="12" height="20" class="bull"/>
-    <rect x="854" y="22" width="12" height="18" class="bull"/>
+  <g id="miniGrid">
+    <line class="grid" x1="0" y1="36" x2="1200" y2="36"/>
+    <line class="grid" x1="0" y1="72" x2="1200" y2="72"/>
+    <line class="grid" x1="0" y1="108" x2="1200" y2="108"/>
   </g>
 
-  <!-- MA LINE basse -->
-  <polyline class="glowline pulse" mask="url(#m)"
-    points="0,58 50,52 100,46 150,40 200,38 250,36 300,34
-            600,34 650,30 700,26 750,22 800,18 850,14 900,10"/>
+  <!-- Edge candles -->
+  <g mask="url(#edgeMask)">
+    <g id="candlesLeft">
+      <line class="wick" x1="32" y1="22" x2="32" y2="88"/>
+      <line class="wick" x1="58" y1="26" x2="58" y2="84"/>
+      <line class="wick" x1="84" y1="18" x2="84" y2="78"/>
+      <line class="wick" x1="110" y1="24" x2="110" y2="82"/>
+      <rect class="bull" x="25" y="44" width="14" height="28"/>
+      <rect class="bear" x="51" y="40" width="14" height="24"/>
+      <rect class="bull" x="77" y="36" width="14" height="26"/>
+      <rect class="bear" x="103" y="42" width="14" height="22"/>
+    </g>
+    <g id="candlesRight">
+      <line class="wick" x1="1090" y1="22" x2="1090" y2="88"/>
+      <line class="wick" x1="1116" y1="18" x2="1116" y2="80"/>
+      <line class="wick" x1="1142" y1="24" x2="1142" y2="84"/>
+      <line class="wick" x1="1168" y1="20" x2="1168" y2="78"/>
+      <rect class="bull" x="1083" y="40" width="14" height="26"/>
+      <rect class="bull" x="1109" y="34" width="14" height="28"/>
+      <rect class="bear" x="1135" y="42" width="14" height="24"/>
+      <rect class="bull" x="1161" y="36" width="14" height="26"/>
+    </g>
+  </g>
 
-  <!-- QUOTE CENTRALE -->
-  <text x="450" y="44" class="quote fadeUp" text-anchor="middle">
-    — noise fades. edge compounds. —
-  </text>
-  <text x="450" y="62" class="dim fadeUp" text-anchor="middle">
-    github.com/Max
-  </text>
+  <!-- Mini bullish chart -->
+  <g class="fadeA" mask="url(#edgeMask)">
+    <polyline class="trendLine"
+      points="380,96 430,88 480,82 530,74 580,68 630,60 680,52 730,46 770,40"/>
+    <circle class="marker" cx="770" cy="40" r="4"/>
+  </g>
+
+  <!-- Signature -->
+  <text class="sig fadeB" x="600" y="118" text-anchor="middle">— noise fades. edge compounds. —</text>
+  <text class="meta fadeC" x="600" y="134" text-anchor="middle">GITHUB.COM/ZENDEURR</text>
 </svg>

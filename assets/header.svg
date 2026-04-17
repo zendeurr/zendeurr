@@ -1,175 +1,209 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Bloomberg-style header — MAX — Trade Build Iterate">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
-
+    <style type="text/css"><![CDATA[
       .bg { fill: #080b0f; }
-      .grid { stroke: #0d2b1a; stroke-width: 0.8; }
-      .axis { stroke: #1a3a28; stroke-width: 1; }
-      .bull { fill: #00c853; stroke: #00c853; }
-      .bear { fill: #0a0a0a; stroke: #00c853; }
-      .wick { stroke: #00c853; stroke-width: 1.5; }
-      .line { fill: none; stroke: #00ff6a; stroke-width: 1.5; opacity: 0.5; }
-      .glowline { fill: none; stroke: #00ff6a; stroke-width: 2.5;
-                  filter: url(#glow); opacity: 0.9; }
-      .scanline { fill: none; stroke: #00ff6a; stroke-width: 1;
-                  opacity: 0; animation: scan 3s linear infinite; }
-      .tag { font-family: 'Share Tech Mono', monospace; fill: #00c853; font-size: 11px; }
-      .tag-dim { font-family: 'Share Tech Mono', monospace; fill: #1e5c38; font-size: 10px; }
-      .title { font-family: 'Share Tech Mono', monospace; fill: #00ff6a;
-               font-size: 28px; font-weight: bold; letter-spacing: 3px; }
-      .subtitle { font-family: 'Share Tech Mono', monospace; fill: #3ddc84;
-                  font-size: 13px; letter-spacing: 6px; opacity: 0.85; }
-      .cursor { fill: #00ff6a; animation: blink 1s step-end infinite; }
-      .pricetag { font-family: 'Share Tech Mono', monospace; fill: #080b0f;
-                  font-size: 10px; font-weight: bold; }
-
-      .fadeIn { animation: fadeIn 1.2s ease forwards; opacity: 0; }
-      .fadeIn2 { animation: fadeIn 1.2s ease 0.4s forwards; opacity: 0; }
-      .fadeIn3 { animation: fadeIn 1.2s ease 0.8s forwards; opacity: 0; }
-      .fadeIn4 { animation: fadeIn 1.2s ease 1.2s forwards; opacity: 0; }
-      .candlerise { animation: candlerise 1s ease forwards; }
-
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-      @keyframes blink { 50% { opacity: 0; } }
-      @keyframes scan {
-        0%   { opacity: 0; transform: translateY(0); }
-        10%  { opacity: 0.15; }
-        90%  { opacity: 0.15; }
-        100% { opacity: 0; transform: translateY(220px); }
+      .grid { stroke: #0f1f18; stroke-width: 0.75; opacity: 0.9; }
+      .axis { stroke: #1a3a28; stroke-width: 1; opacity: 0.6; }
+      .wick { stroke: #00c853; stroke-width: 1.35; }
+      .bull { fill: #00c853; stroke: #00c853; stroke-width: 0.5; }
+      .bear { fill: #0a1210; stroke: #00c853; stroke-width: 1; }
+      .maGlow {
+        fill: none;
+        stroke: #00ff6a;
+        stroke-width: 2.25;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: url(#maGlowFilter);
+        animation: maPulse 2.8s ease-in-out infinite;
       }
-      @keyframes pulse {
-        0%, 100% { opacity: 0.6; }
+      .title {
+        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
+        fill: #00ff6a;
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+      }
+      .subtitle {
+        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
+        fill: #00c853;
+        font-size: 14px;
+        letter-spacing: 0.42em;
+        opacity: 0.92;
+      }
+      .tag {
+        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
+        fill: #00c853;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+      }
+      .tagDim {
+        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
+        fill: #1e5c38;
+        font-size: 10px;
+      }
+      .tagUp { fill: #00ff6a; }
+      .cursor {
+        fill: #00ff6a;
+        animation: blink 1.05s step-end infinite;
+      }
+      .pricetagText {
+        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
+        fill: #080b0f;
+        font-size: 10px;
+        font-weight: 700;
+      }
+      .pricetagBg {
+        fill: #00c853;
+        animation: priceTagPulse 2.2s ease-in-out infinite;
+      }
+      .fade0 { animation: fadeIn 0.9s ease forwards; opacity: 0; }
+      .fade1 { animation: fadeIn 0.9s ease 0.15s forwards; opacity: 0; }
+      .fade2 { animation: fadeIn 0.9s ease 0.35s forwards; opacity: 0; }
+      .fade3 { animation: fadeIn 0.9s ease 0.55s forwards; opacity: 0; }
+      .fade4 { animation: fadeIn 0.9s ease 0.75s forwards; opacity: 0; }
+      .fade5 { animation: fadeIn 0.9s ease 0.95s forwards; opacity: 0; }
+      .fade6 { animation: fadeIn 0.9s ease 1.15s forwards; opacity: 0; }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes blink { 50% { opacity: 0; } }
+      @keyframes maPulse {
+        0%, 100% { opacity: 0.72; }
         50% { opacity: 1; }
       }
-    </style>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      @keyframes priceTagPulse {
+        0%, 100% { opacity: 0.78; }
+        50% { opacity: 1; }
+      }
+    ]]></style>
+    <filter id="maGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.8" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
-    <filter id="softglow">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <linearGradient id="fadeout" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="edgeFade" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#080b0f" stop-opacity="1"/>
-      <stop offset="15%" stop-color="#080b0f" stop-opacity="0"/>
-      <stop offset="85%" stop-color="#080b0f" stop-opacity="0"/>
+      <stop offset="14%" stop-color="#080b0f" stop-opacity="0"/>
+      <stop offset="86%" stop-color="#080b0f" stop-opacity="0"/>
       <stop offset="100%" stop-color="#080b0f" stop-opacity="1"/>
     </linearGradient>
     <mask id="edgeMask">
-      <rect width="900" height="220" fill="url(#fadeout)"/>
+      <rect width="1200" height="320" fill="url(#edgeFade)"/>
     </mask>
   </defs>
 
-  <!-- BG -->
-  <rect width="900" height="220" class="bg"/>
+  <rect class="bg" width="1200" height="320"/>
 
-  <!-- GRID HORIZONTAL -->
-  <g class="fadeIn">
-    <line x1="0" y1="44" x2="900" y2="44" class="grid"/>
-    <line x1="0" y1="88" x2="900" y2="88" class="grid"/>
-    <line x1="0" y1="132" x2="900" y2="132" class="grid"/>
-    <line x1="0" y1="176" x2="900" y2="176" class="grid"/>
-  </g>
-  <!-- GRID VERTICAL -->
-  <g class="fadeIn">
-    <line x1="90" y1="0" x2="90" y2="220" class="grid"/>
-    <line x1="180" y1="0" x2="180" y2="220" class="grid"/>
-    <line x1="270" y1="0" x2="270" y2="220" class="grid"/>
-    <line x1="360" y1="0" x2="360" y2="220" class="grid"/>
-    <line x1="450" y1="0" x2="450" y2="220" class="grid"/>
-    <line x1="540" y1="0" x2="540" y2="220" class="grid"/>
-    <line x1="630" y1="0" x2="630" y2="220" class="grid"/>
-    <line x1="720" y1="0" x2="720" y2="220" class="grid"/>
-    <line x1="810" y1="0" x2="810" y2="220" class="grid"/>
-  </g>
-
-  <!-- PRICE LABELS (left) -->
-  <g class="fadeIn tag-dim">
-    <text x="4" y="42">97.2K</text>
-    <text x="4" y="86">95.8K</text>
-    <text x="4" y="130">94.4K</text>
-    <text x="4" y="174">93.0K</text>
+  <!-- Bloomberg grid -->
+  <g id="grid" class="fade0">
+    <line class="axis" x1="0" y1="64" x2="1200" y2="64"/>
+    <line class="axis" x1="0" y1="128" x2="1200" y2="128"/>
+    <line class="axis" x1="0" y1="192" x2="1200" y2="192"/>
+    <line class="axis" x1="0" y1="256" x2="1200" y2="256"/>
+    <g>
+      <line class="grid" x1="80" y1="0" x2="80" y2="280"/>
+      <line class="grid" x1="160" y1="0" x2="160" y2="280"/>
+      <line class="grid" x1="240" y1="0" x2="240" y2="280"/>
+      <line class="grid" x1="320" y1="0" x2="320" y2="280"/>
+      <line class="grid" x1="400" y1="0" x2="400" y2="280"/>
+      <line class="grid" x1="480" y1="0" x2="480" y2="280"/>
+      <line class="grid" x1="560" y1="0" x2="560" y2="280"/>
+      <line class="grid" x1="640" y1="0" x2="640" y2="280"/>
+      <line class="grid" x1="720" y1="0" x2="720" y2="280"/>
+      <line class="grid" x1="800" y1="0" x2="800" y2="280"/>
+      <line class="grid" x1="880" y1="0" x2="880" y2="280"/>
+      <line class="grid" x1="960" y1="0" x2="960" y2="280"/>
+      <line class="grid" x1="1040" y1="0" x2="1040" y2="280"/>
+      <line class="grid" x1="1120" y1="0" x2="1120" y2="280"/>
+    </g>
   </g>
 
-  <!-- CANDLES — zone gauche -->
-  <g class="fadeIn2" mask="url(#edgeMask)">
-    <!-- wicks -->
-    <line x1="100" y1="68" x2="100" y2="158" class="wick"/>
-    <line x1="130" y1="55" x2="130" y2="140" class="wick"/>
-    <line x1="160" y1="72" x2="160" y2="155" class="wick"/>
-    <line x1="190" y1="60" x2="190" y2="148" class="wick"/>
-    <line x1="220" y1="50" x2="220" y2="130" class="wick"/>
-    <line x1="250" y1="45" x2="250" y2="120" class="wick"/>
-    <line x1="280" y1="55" x2="280" y2="135" class="wick"/>
-    <line x1="310" y1="40" x2="310" y2="115" class="wick"/>
-    <!-- bodies bull -->
-    <rect x="93"  y="90"  width="14" height="48" class="bull"/>
-    <rect x="123" y="75"  width="14" height="40" class="bull"/>
-    <rect x="153" y="95"  width="14" height="38" class="bear"/>
-    <rect x="183" y="80"  width="14" height="42" class="bull"/>
-    <rect x="213" y="68"  width="14" height="38" class="bull"/>
-    <rect x="243" y="62"  width="14" height="35" class="bear"/>
-    <rect x="273" y="72"  width="14" height="40" class="bull"/>
-    <rect x="303" y="58"  width="14" height="34" class="bull"/>
+  <!-- Y-axis labels -->
+  <g id="ylabels" class="fade1">
+    <text class="tagDim" x="6" y="58">HTF</text>
+    <text class="tagDim" x="6" y="122">MTF</text>
+    <text class="tagDim" x="6" y="186">LTF</text>
+    <text class="tagDim" x="6" y="250">RNG</text>
   </g>
 
-  <!-- CANDLES — zone droite -->
-  <g class="fadeIn2" mask="url(#edgeMask)">
-    <line x1="580" y1="52" x2="580" y2="122" class="wick"/>
-    <line x1="610" y1="48" x2="610" y2="118" class="wick"/>
-    <line x1="640" y1="55" x2="640" y2="128" class="wick"/>
-    <line x1="670" y1="42" x2="670" y2="108" class="wick"/>
-    <line x1="700" y1="38" x2="700" y2="105" class="wick"/>
-    <line x1="730" y1="45" x2="730" y2="115" class="wick"/>
-    <line x1="760" y1="35" x2="760" y2="100" class="wick"/>
-    <line x1="790" y1="30" x2="790" y2="92" class="wick"/>
-    <rect x="573" y="68"  width="14" height="32" class="bull"/>
-    <rect x="603" y="62"  width="14" height="34" class="bear"/>
-    <rect x="633" y="72"  width="14" height="35" class="bull"/>
-    <rect x="663" y="56"  width="14" height="30" class="bull"/>
-    <rect x="693" y="52"  width="14" height="30" class="bear"/>
-    <rect x="723" y="58"  width="14" height="28" class="bull"/>
-    <rect x="753" y="45"  width="14" height="30" class="bull"/>
-    <rect x="783" y="40"  width="14" height="28" class="bull"/>
+  <!-- Left candle cluster -->
+  <g id="candlesLeft" class="fade2" mask="url(#edgeMask)">
+    <line class="wick" x1="110" y1="92" x2="110" y2="198"/>
+    <line class="wick" x1="145" y1="78" x2="145" y2="188"/>
+    <line class="wick" x1="180" y1="98" x2="180" y2="202"/>
+    <line class="wick" x1="215" y1="84" x2="215" y2="192"/>
+    <line class="wick" x1="250" y1="72" x2="250" y2="176"/>
+    <line class="wick" x1="285" y1="66" x2="285" y2="168"/>
+    <line class="wick" x1="320" y1="76" x2="320" y2="182"/>
+    <line class="wick" x1="355" y1="58" x2="355" y2="162"/>
+    <rect class="bull" x="102" y="118" width="16" height="52"/>
+    <rect class="bull" x="137" y="102" width="16" height="48"/>
+    <rect class="bear" x="172" y="128" width="16" height="42"/>
+    <rect class="bull" x="207" y="108" width="16" height="50"/>
+    <rect class="bull" x="242" y="96" width="16" height="44"/>
+    <rect class="bear" x="277" y="104" width="16" height="40"/>
+    <rect class="bull" x="312" y="94" width="16" height="48"/>
+    <rect class="bull" x="347" y="86" width="16" height="46"/>
   </g>
 
-  <!-- MA LINE (moving average) -->
-  <g class="fadeIn3">
-    <polyline class="glowline"
-      points="90,148 130,132 170,128 210,118 250,112 290,108 330,100
-              570,100 610,92 650,88 690,80 730,76 770,68 810,60"/>
+  <!-- Right candle cluster -->
+  <g id="candlesRight" class="fade2" mask="url(#edgeMask)">
+    <line class="wick" x1="820" y1="70" x2="820" y2="158"/>
+    <line class="wick" x1="855" y1="64" x2="855" y2="152"/>
+    <line class="wick" x1="890" y1="72" x2="890" y2="162"/>
+    <line class="wick" x1="925" y1="56" x2="925" y2="148"/>
+    <line class="wick" x1="960" y1="50" x2="960" y2="142"/>
+    <line class="wick" x1="995" y1="60" x2="995" y2="154"/>
+    <line class="wick" x1="1030" y1="44" x2="1030" y2="138"/>
+    <line class="wick" x1="1065" y1="38" x2="1065" y2="128"/>
+    <rect class="bull" x="812" y="88" width="16" height="40"/>
+    <rect class="bear" x="847" y="82" width="16" height="38"/>
+    <rect class="bull" x="882" y="92" width="16" height="42"/>
+    <rect class="bull" x="917" y="78" width="16" height="40"/>
+    <rect class="bear" x="952" y="74" width="16" height="36"/>
+    <rect class="bull" x="987" y="84" width="16" height="38"/>
+    <rect class="bull" x="1022" y="70" width="16" height="40"/>
+    <rect class="bull" x="1057" y="62" width="16" height="38"/>
   </g>
 
-  <!-- PRICE TAG actuel -->
-  <g class="fadeIn3" style="animation: pulse 2s ease infinite;">
-    <rect x="820" y="52" width="60" height="16" fill="#00c853" rx="2"/>
-    <text x="824" y="63" class="pricetag">96,840 ▲</text>
+  <!-- Moving average -->
+  <g id="ma" class="fade3">
+    <polyline class="maGlow"
+      points="96,200 140,188 184,182 228,174 272,168 316,160 360,152 404,146
+              796,146 840,138 884,130 928,122 972,116 1016,108 1060,100 1104,92 1148,86"/>
   </g>
 
-  <!-- TEXTE CENTRAL -->
-  <g class="fadeIn3">
-    <text x="450" y="108" class="title" text-anchor="middle" filter="url(#softglow)">MAX</text>
-    <text x="450" y="132" class="subtitle" text-anchor="middle">TRADE  ·  BUILD  ·  ITERATE</text>
+  <!-- Price tag -->
+  <g id="priceTag" class="fade3" transform="translate(0,0)">
+    <rect class="pricetagBg" x="1056" y="78" width="118" height="20" rx="2"/>
+    <text class="pricetagText" x="1064" y="92">MARK · LIVE</text>
   </g>
 
-  <!-- CURSOR CLIGNOTANT -->
-  <rect x="530" y="119" width="8" height="14" class="cursor fadeIn4"/>
-
-  <!-- TICKER INFO bas -->
-  <g class="fadeIn4">
-    <text x="18" y="210" class="tag">BTC/USDT</text>
-    <text x="100" y="210" class="tag" fill="#00ff6a">+2.34%</text>
-    <text x="160" y="210" class="tag-dim">|</text>
-    <text x="170" y="210" class="tag">ETH/USDT</text>
-    <text x="255" y="210" class="tag" fill="#00ff6a">+1.87%</text>
-    <text x="315" y="210" class="tag-dim">|</text>
-    <text x="325" y="210" class="tag">SOL/USDT</text>
-    <text x="410" y="210" class="tag" fill="#00ff6a">+3.12%</text>
-    <text x="700" y="210" class="tag-dim">PINE SCRIPT  ·  v5/v6</text>
+  <!-- Center copy -->
+  <g id="hero" class="fade4">
+    <text class="title" x="600" y="148" text-anchor="middle">MAX</text>
+    <text class="subtitle" x="600" y="182" text-anchor="middle">TRADE · BUILD · ITERATE</text>
   </g>
 
-  <!-- SCAN LINE OVERLAY -->
-  <rect width="900" height="1" y="-2" fill="none" stroke="#00ff6a" stroke-width="1" opacity="0.08" class="scanline"/>
+  <!-- Blinking terminal cursor after subtitle -->
+  <rect class="cursor fade5" x="712" y="168" width="10" height="16" rx="1"/>
+
+  <!-- Ticker bar -->
+  <g id="ticker" class="fade6">
+    <rect x="0" y="278" width="1200" height="42" fill="#06080c" opacity="0.92"/>
+    <line x1="0" y1="278" x2="1200" y2="278" stroke="#00c853" stroke-opacity="0.35"/>
+    <text class="tag" x="20" y="304">BTC</text>
+    <text class="tagUp" x="58" y="304">+1.12%</text>
+    <text class="tagDim" x="128" y="304">|</text>
+    <text class="tag" x="142" y="304">ETH</text>
+    <text class="tagUp" x="180" y="304">+0.64%</text>
+    <text class="tagDim" x="248" y="304">|</text>
+    <text class="tag" x="262" y="304">SOL</text>
+    <text class="tagUp" x="300" y="304">+2.08%</text>
+    <text class="tagDim" x="900" y="304">5M · 15M · 1H · 4H</text>
+    <text class="tagDim" x="1048" y="304">PINE v5/v6</text>
+  </g>
 </svg>
