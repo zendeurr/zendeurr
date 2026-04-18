@@ -63,10 +63,8 @@ max = {
 ## 📈 GitHub Stats
 
 <div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zendeurr&layout=compact&theme=chartreuse-dark&hide_border=true"/>
+<img height="90em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark"/>
+<img height="90em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zendeurr&layout=compact&theme=chartreuse-dark&hide_border=true"/>
 
 </div>
 
