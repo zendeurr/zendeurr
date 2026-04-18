@@ -63,15 +63,13 @@ max = {
 ## 📈 GitHub Stats
 
 <div align="center">
-<img height="90em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark"/>
+![GitHub Streak](https://streak-stats.demolab.com?user=zendeurr&theme=chartreuse-dark&hide_border=true&date_format=j%20M%5B%20Y%5D)
 <img height="90em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zendeurr&layout=compact&theme=chartreuse-dark&hide_border=true"/>
 
 </div>
 
 <div align="center">
-
-![GitHub Streak](https://streak-stats.demolab.com?user=zendeurr&theme=chartreuse-dark&hide_border=true&date_format=j%20M%5B%20Y%5D)
-
+<img height="90em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark"/>
 </div>
 
 ---
