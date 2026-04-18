@@ -1,29 +1,27 @@
 <div align="center">
 
-<img width="100%" src="assets/header.svg" alt="zendeurr — Trade · Build · Iterate" />
+<!-- ░░ HEADER — custom SVG trading chart ░░ -->
+<img width="100%" src="./assets/header.svg" alt="Max — Trade · Build · Iterate" />
 
-<a href="https://github.com/zendeurr">
-  <img
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00D4FF&center=true&vCenter=true&width=720&lines=Swing+crypto+trader+%E2%80%94+BTC+%C2%B7+SOL+%C2%B7+ALTs;Pine+Script+v5%2Fv6+%C2%B7+structure+%C2%B7+FVG+%C2%B7+patterns;Next.js+%2B+Notion+API+%2B+Vercel+%C2%B7+trading+dashboard;CS+Y1+%C2%B7+Python+%C2%B7+capital+preservation+%C2%B7+no+leverage;Process+%3E+noise+%C2%B7+journal+in+Notion"
-    alt="Typing animation"
-  />
+<!-- TYPING ANIMATION -->
+<a href="https://github.com/Max">
+  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=600&size=20&pause=1000&color=00C853&center=true&vCenter=true&width=600&lines=Crypto+Scalper+%E2%80%94+BTC+%2F+ETH+%2F+SOL;Pine+Script+v5%2Fv6+Strategy+Dev;Next.js+%2B+Notion+API+%2B+Vercel;Python+%7C+Data+%7C+Automation;Read+the+chart.+Trust+the+process." alt="Typing SVG" />
 </a>
 
 <br/>
 
+<!-- BADGES -->
 [![TradingView](https://img.shields.io/badge/TradingView-131722?style=for-the-badge&logo=tradingview&logoColor=00C176)](https://www.tradingview.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
-[![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.so/)
+[![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](https://notion.so/)
 
 </div>
 
 ---
 
-## À propos
+## 🧠 À propos de moi
 
 ```python
-
-=======
 max = {
     "focus"     : ["Swing Trading", "Crypto enthusiast", "AI Projects"],
     "markets"   : ["BTC", "SOL", "ALTS"],
@@ -31,28 +29,23 @@ max = {
     "stack"     : ["Pine Script", "Oracle", "Python", "Vercel"],
     "currently" : "Building a trading dashboard + sharpening my edge 📊",
     "motto"     : "Protect the capital. Let the profits run. 🎯"
->>>>>>> 2c6c1072f6f1b638efd0bf37cfbc3741d3e36164
 }
 ```
 
 ---
 
-## Trading & Pine Script
+## 📊 Trading & Pine Script
 
-=======
 > Crypto trader on medium/long timeframes, focused on **BTC / SOL / ALTCOINS** — capital preservation first.
->>>>>>> 2c6c1072f6f1b638efd0bf37cfbc3741d3e36164
 
-- **Market structure** — HH / HL / LH / LL, trend vs range context
-- **Dislocations** — FVG / imbalance awareness as part of the narrative (not signal spam)
-- **Pattern recognition** — classical + price-action confluence, always validated by risk
-- **Backtesting** — Pine Script v5/v6, iterative stats on TradingView (scalping studies included)
-- **Journal** — Notion logging: setups, mistakes, R-multiples, emotional drift checks
-- **Dashboard** — personal **Next.js** stack synced via **Notion API**, deployed on **Vercel** (WIP)
+- 📐 **Market Structure** — HH/HL/LH/LL pattern recognition
+- 🧪 **Backtesting** — iterative strategy refinement on TradingView
+- 📓 **Trade Journal** — Notion-based logging with win rate & R/R tracking
+- 🖥️ **Dashboard** — Next.js + Notion API + Vercel *(in progress)*
 
 ---
 
-## Stack
+## 🛠️ Stack & Outils
 
 <div align="center">
 
@@ -67,11 +60,11 @@ max = {
 
 ---
 
-## GitHub Stats
+## 📈 GitHub Stats
 
 <div align="center">
 
-=======
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark&hide_border=true&include_all_commits=true&count_private=true"/>
 <img height="180em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark"/>
 <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zendeurr&layout=compact&theme=chartreuse-dark&hide_border=true"/>
 
@@ -80,25 +73,23 @@ max = {
 <div align="center">
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=zendeurr&theme=chartreuse-dark&hide_border=true&date_format=j%20M%5B%20Y%5D)
->>>>>>> 2c6c1072f6f1b638efd0bf37cfbc3741d3e36164
 
 </div>
 
 ---
 
-=======
 ## 🔥 What am I doing right now?
->>>>>>> 2c6c1072f6f1b638efd0bf37cfbc3741d3e36164
 
-- **Trading dashboard** — Next.js UI, Notion as source of truth, Vercel deploy pipeline
-- **Pine Script** — strategy hygiene: fees, slippage assumptions, session filters, robustness checks
-- **Python** — tooling around data pulls, lightweight analytics, glue scripts
-- **CS (1re année)** — algorithms, discrete math, systems fundamentals — applied curiosity, not resume filler
+- 🏗️ **Trading Dashboard** — Next.js · Notion API · KPIs (Win Rate, P&L, R/R)
+- 📊 **Pine Script v5/v6** — scalping strategies on crypto
+- 🐍 **Python** — projets data & automatisation
+- 🎓 **CS** — apprentissage continu des fondamentaux
 
 ---
 
 <div align="center">
 
-<img width="100%" src="assets/footer.svg" alt="— noise fades. edge compounds. —" />
+<!-- ░░ FOOTER — custom SVG chart continuation ░░ -->
+<img width="100%" src="./assets/footer.svg" alt="footer" />
 
 </div>
