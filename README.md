@@ -22,28 +22,16 @@
 ## À propos
 
 ```python
-zendeurr = {
-    "focus": [
-        "Swing crypto trading",
-        "Pine Script (TradingView v5/v6)",
-        "Next.js dashboards & automation",
-    ],
-    "markets": ["BTC", "SOL", "ALTs"],
+
+=======
+max = {
+    "focus"     : ["Swing Trading", "Crypto enthusiast", "AI Projects"],
+    "markets"   : ["BTC", "SOL", "ALTS"],
     "timeframes": ["5m", "15m", "1h", "4h"],
-    "stack": [
-        "Pine Script",
-        "Next.js",
-        "Python",
-        "Vercel",
-        "Notion API",
-        "MongoDB",
-        "Oracle",
-    ],
-    "currently": (
-        "Trading dashboard (Next.js + Notion API + Vercel) · "
-        "scalping strategies backtested on TradingView"
-    ),
-    "motto": "Capital preservation first · no leverage · edge compounds slowly",
+    "stack"     : ["Pine Script", "Oracle", "Python", "Vercel"],
+    "currently" : "Building a trading dashboard + sharpening my edge 📊",
+    "motto"     : "Protect the capital. Let the profits run. 🎯"
+>>>>>>> 2c6c1072f6f1b638efd0bf37cfbc3741d3e36164
 }
 ```
 
@@ -51,7 +39,9 @@ zendeurr = {
 
 ## Trading & Pine Script
 
-Swing-oriented workflow on **BTC**, **SOL**, and **ALTs** — medium to higher timeframes (**5m → 4h**), with a bias toward **structure**, **liquidity**, and **repeatable setups** rather than noise.
+=======
+> Crypto trader on medium/long timeframes, focused on **BTC / SOL / ALTCOINS** — capital preservation first.
+>>>>>>> 2c6c1072f6f1b638efd0bf37cfbc3741d3e36164
 
 - **Market structure** — HH / HL / LH / LL, trend vs range context
 - **Dislocations** — FVG / imbalance awareness as part of the narrative (not signal spam)
@@ -68,10 +58,6 @@ Swing-oriented workflow on **BTC**, **SOL**, and **ALTs** — medium to higher t
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 ![Pine Script](https://img.shields.io/badge/Pine_Script-00C176?style=for-the-badge&logo=tradingview&logoColor=white)
@@ -85,16 +71,24 @@ Swing-oriented workflow on **BTC**, **SOL**, and **ALTs** — medium to higher t
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub stats" />
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zendeurr&layout=compact&theme=midnight-purple&hide_border=true" alt="Top languages" />
+=======
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=zendeurr&show_icons=true&theme=chartreuse-dark"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zendeurr&layout=compact&theme=chartreuse-dark&hide_border=true"/>
 
-![GitHub Streak](https://streak-stats.demolab.com?user=zendeurr&theme=midnight-purple&hide_border=true&date_format=j%20M%5B%20Y%5D)
+</div>
+
+<div align="center">
+
+![GitHub Streak](https://streak-stats.demolab.com?user=zendeurr&theme=chartreuse-dark&hide_border=true&date_format=j%20M%5B%20Y%5D)
+>>>>>>> 2c6c1072f6f1b638efd0bf37cfbc3741d3e36164
 
 </div>
 
 ---
 
-## En ce moment
+=======
+## 🔥 What am I doing right now?
+>>>>>>> 2c6c1072f6f1b638efd0bf37cfbc3741d3e36164
 
 - **Trading dashboard** — Next.js UI, Notion as source of truth, Vercel deploy pipeline
 - **Pine Script** — strategy hygiene: fees, slippage assumptions, session filters, robustness checks

@@ -1,209 +1,103 @@
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Bloomberg-style header — MAX — Trade Build Iterate">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-label="zendeurr profile header, terminal chart">
   <defs>
-    <style type="text/css"><![CDATA[
-      .bg { fill: #080b0f; }
-      .grid { stroke: #0f1f18; stroke-width: 0.75; opacity: 0.9; }
-      .axis { stroke: #1a3a28; stroke-width: 1; opacity: 0.6; }
-      .wick { stroke: #00c853; stroke-width: 1.35; }
-      .bull { fill: #00c853; stroke: #00c853; stroke-width: 0.5; }
-      .bear { fill: #0a1210; stroke: #00c853; stroke-width: 1; }
-      .maGlow {
-        fill: none;
-        stroke: #00ff6a;
-        stroke-width: 2.25;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        filter: url(#maGlowFilter);
-        animation: maPulse 2.8s ease-in-out infinite;
-      }
-      .title {
-        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
-        fill: #00ff6a;
-        font-size: 34px;
-        font-weight: 700;
-        letter-spacing: 0.18em;
-      }
-      .subtitle {
-        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
-        fill: #00c853;
-        font-size: 14px;
-        letter-spacing: 0.42em;
-        opacity: 0.92;
-      }
-      .tag {
-        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
-        fill: #00c853;
-        font-size: 11px;
-        letter-spacing: 0.06em;
-      }
-      .tagDim {
-        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
-        fill: #1e5c38;
-        font-size: 10px;
-      }
-      .tagUp { fill: #00ff6a; }
-      .cursor {
-        fill: #00ff6a;
-        animation: blink 1.05s step-end infinite;
-      }
-      .pricetagText {
-        font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Share Tech Mono', monospace;
-        fill: #080b0f;
-        font-size: 10px;
-        font-weight: 700;
-      }
-      .pricetagBg {
-        fill: #00c853;
-        animation: priceTagPulse 2.2s ease-in-out infinite;
-      }
-      .fade0 { animation: fadeIn 0.9s ease forwards; opacity: 0; }
-      .fade1 { animation: fadeIn 0.9s ease 0.15s forwards; opacity: 0; }
-      .fade2 { animation: fadeIn 0.9s ease 0.35s forwards; opacity: 0; }
-      .fade3 { animation: fadeIn 0.9s ease 0.55s forwards; opacity: 0; }
-      .fade4 { animation: fadeIn 0.9s ease 0.75s forwards; opacity: 0; }
-      .fade5 { animation: fadeIn 0.9s ease 0.95s forwards; opacity: 0; }
-      .fade6 { animation: fadeIn 0.9s ease 1.15s forwards; opacity: 0; }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(6px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes blink { 50% { opacity: 0; } }
-      @keyframes maPulse {
-        0%, 100% { opacity: 0.72; }
-        50% { opacity: 1; }
-      }
-      @keyframes priceTagPulse {
-        0%, 100% { opacity: 0.78; }
-        50% { opacity: 1; }
-      }
-    ]]></style>
-    <filter id="maGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2.8" result="b"/>
+    <filter id="maGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.9 0" result="b2"/>
       <feMerge>
-        <feMergeNode in="b"/>
+        <feMergeNode in="b2"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <linearGradient id="edgeFade" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#080b0f" stop-opacity="1"/>
-      <stop offset="14%" stop-color="#080b0f" stop-opacity="0"/>
-      <stop offset="86%" stop-color="#080b0f" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#080b0f" stop-opacity="1"/>
-    </linearGradient>
-    <mask id="edgeMask">
-      <rect width="1200" height="320" fill="url(#edgeFade)"/>
-    </mask>
+    <clipPath id="chartClip">
+      <rect x="32" y="36" width="560" height="200" rx="2"/>
+    </clipPath>
   </defs>
-
-  <rect class="bg" width="1200" height="320"/>
-
-  <!-- Bloomberg grid -->
-  <g id="grid" class="fade0">
-    <line class="axis" x1="0" y1="64" x2="1200" y2="64"/>
-    <line class="axis" x1="0" y1="128" x2="1200" y2="128"/>
-    <line class="axis" x1="0" y1="192" x2="1200" y2="192"/>
-    <line class="axis" x1="0" y1="256" x2="1200" y2="256"/>
-    <g>
-      <line class="grid" x1="80" y1="0" x2="80" y2="280"/>
-      <line class="grid" x1="160" y1="0" x2="160" y2="280"/>
-      <line class="grid" x1="240" y1="0" x2="240" y2="280"/>
-      <line class="grid" x1="320" y1="0" x2="320" y2="280"/>
-      <line class="grid" x1="400" y1="0" x2="400" y2="280"/>
-      <line class="grid" x1="480" y1="0" x2="480" y2="280"/>
-      <line class="grid" x1="560" y1="0" x2="560" y2="280"/>
-      <line class="grid" x1="640" y1="0" x2="640" y2="280"/>
-      <line class="grid" x1="720" y1="0" x2="720" y2="280"/>
-      <line class="grid" x1="800" y1="0" x2="800" y2="280"/>
-      <line class="grid" x1="880" y1="0" x2="880" y2="280"/>
-      <line class="grid" x1="960" y1="0" x2="960" y2="280"/>
-      <line class="grid" x1="1040" y1="0" x2="1040" y2="280"/>
-      <line class="grid" x1="1120" y1="0" x2="1120" y2="280"/>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap");
+    .mono { font-family: "Share Tech Mono", ui-monospace, monospace; }
+    .fade { opacity: 0; animation: fadeIn 0.75s ease forwards; }
+    .fd0 { animation-delay: 0.05s; }
+    .fd1 { animation-delay: 0.18s; }
+    .fd2 { animation-delay: 0.32s; }
+    .fd3 { animation-delay: 0.46s; }
+    .fd4 { animation-delay: 0.6s; }
+    .fd5 { animation-delay: 0.74s; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .cursor { animation: blink 1.05s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .pulseTag { animation: pulseTag 2.1s ease-in-out infinite; transform-origin: center; }
+    @keyframes pulseTag {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.72; transform: scale(1.04); }
+    }
+    .maGlow { filter: url(#maGlow); }
+  </style>
+  <rect width="1200" height="320" fill="#080b0f"/>
+  <g class="fade fd0" stroke="#1a222c" stroke-width="1" opacity="0.55">
+    <line x1="0" y1="48" x2="1200" y2="48"/>
+    <line x1="0" y1="88" x2="1200" y2="88"/>
+    <line x1="0" y1="128" x2="1200" y2="128"/>
+    <line x1="0" y1="168" x2="1200" y2="168"/>
+    <line x1="0" y1="208" x2="1200" y2="208"/>
+    <line x1="0" y1="248" x2="1200" y2="248"/>
+    <line x1="80" y1="0" x2="80" y2="280"/>
+    <line x1="200" y1="0" x2="200" y2="280"/>
+    <line x1="320" y1="0" x2="320" y2="280"/>
+    <line x1="440" y1="0" x2="440" y2="280"/>
+    <line x1="560" y1="0" x2="560" y2="280"/>
+    <line x1="680" y1="0" x2="680" y2="280"/>
+    <line x1="800" y1="0" x2="800" y2="280"/>
+    <line x1="920" y1="0" x2="920" y2="280"/>
+    <line x1="1040" y1="0" x2="1040" y2="280"/>
+  </g>
+  <g class="fade fd1" clip-path="url(#chartClip)">
+    <g stroke="#2a3a4a" stroke-width="1.2">
+      <line x1="92" y1="120" x2="92" y2="168"/>
+      <rect x="86" y="132" width="12" height="28" fill="#00c853" stroke="none"/>
+      <line x1="152" y1="140" x2="152" y2="188"/>
+      <rect x="146" y="148" width="12" height="36" fill="#3d5a4a" stroke="none"/>
+      <line x1="212" y1="150" x2="212" y2="118"/>
+      <rect x="206" y="118" width="12" height="30" fill="#00ff6a" stroke="none"/>
+      <line x1="272" y1="128" x2="272" y2="98"/>
+      <rect x="266" y="98" width="12" height="28" fill="#00c853" stroke="none"/>
+      <line x1="332" y1="104" x2="332" y2="132"/>
+      <rect x="326" y="104" width="12" height="26" fill="#00ff6a" stroke="none"/>
+      <line x1="392" y1="138" x2="392" y2="168"/>
+      <rect x="386" y="142" width="12" height="24" fill="#2f6f4f" stroke="none"/>
+      <line x1="452" y1="160" x2="452" y2="112"/>
+      <rect x="446" y="112" width="12" height="46" fill="#00ff6a" stroke="none"/>
+      <line x1="512" y1="118" x2="512" y2="88"/>
+      <rect x="506" y="88" width="12" height="28" fill="#00c853" stroke="none"/>
     </g>
+    <polyline class="maGlow" fill="none" stroke="#00ff6a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+      points="92,158 152,168 212,142 272,118 332,112 392,152 452,128 512,102"/>
   </g>
-
-  <!-- Y-axis labels -->
-  <g id="ylabels" class="fade1">
-    <text class="tagDim" x="6" y="58">HTF</text>
-    <text class="tagDim" x="6" y="122">MTF</text>
-    <text class="tagDim" x="6" y="186">LTF</text>
-    <text class="tagDim" x="6" y="250">RNG</text>
+  <g class="fade fd2">
+    <rect x="468" y="96" width="118" height="26" rx="2" fill="#0d1117" stroke="#1f2a35" stroke-width="1"/>
+    <text x="477" y="114" class="mono" fill="#00ff6a" font-size="12">LAST</text>
+    <text x="527" y="114" class="mono pulseTag" fill="#00ff6a" font-size="13" font-weight="700">98,420.12</text>
   </g>
-
-  <!-- Left candle cluster -->
-  <g id="candlesLeft" class="fade2" mask="url(#edgeMask)">
-    <line class="wick" x1="110" y1="92" x2="110" y2="198"/>
-    <line class="wick" x1="145" y1="78" x2="145" y2="188"/>
-    <line class="wick" x1="180" y1="98" x2="180" y2="202"/>
-    <line class="wick" x1="215" y1="84" x2="215" y2="192"/>
-    <line class="wick" x1="250" y1="72" x2="250" y2="176"/>
-    <line class="wick" x1="285" y1="66" x2="285" y2="168"/>
-    <line class="wick" x1="320" y1="76" x2="320" y2="182"/>
-    <line class="wick" x1="355" y1="58" x2="355" y2="162"/>
-    <rect class="bull" x="102" y="118" width="16" height="52"/>
-    <rect class="bull" x="137" y="102" width="16" height="48"/>
-    <rect class="bear" x="172" y="128" width="16" height="42"/>
-    <rect class="bull" x="207" y="108" width="16" height="50"/>
-    <rect class="bull" x="242" y="96" width="16" height="44"/>
-    <rect class="bear" x="277" y="104" width="16" height="40"/>
-    <rect class="bull" x="312" y="94" width="16" height="48"/>
-    <rect class="bull" x="347" y="86" width="16" height="46"/>
+  <g class="fade fd3">
+    <text x="620" y="138" class="mono" fill="#00ff6a" font-size="52" letter-spacing="2">zendeurr</text>
+    <text x="620" y="178" class="mono" fill="#00D4FF" font-size="17" letter-spacing="3">TRADE &#183; BUILD &#183; ITERATE</text>
+    <rect x="902" y="158" width="10" height="22" fill="#00ff6a" class="cursor"/>
   </g>
-
-  <!-- Right candle cluster -->
-  <g id="candlesRight" class="fade2" mask="url(#edgeMask)">
-    <line class="wick" x1="820" y1="70" x2="820" y2="158"/>
-    <line class="wick" x1="855" y1="64" x2="855" y2="152"/>
-    <line class="wick" x1="890" y1="72" x2="890" y2="162"/>
-    <line class="wick" x1="925" y1="56" x2="925" y2="148"/>
-    <line class="wick" x1="960" y1="50" x2="960" y2="142"/>
-    <line class="wick" x1="995" y1="60" x2="995" y2="154"/>
-    <line class="wick" x1="1030" y1="44" x2="1030" y2="138"/>
-    <line class="wick" x1="1065" y1="38" x2="1065" y2="128"/>
-    <rect class="bull" x="812" y="88" width="16" height="40"/>
-    <rect class="bear" x="847" y="82" width="16" height="38"/>
-    <rect class="bull" x="882" y="92" width="16" height="42"/>
-    <rect class="bull" x="917" y="78" width="16" height="40"/>
-    <rect class="bear" x="952" y="74" width="16" height="36"/>
-    <rect class="bull" x="987" y="84" width="16" height="38"/>
-    <rect class="bull" x="1022" y="70" width="16" height="40"/>
-    <rect class="bull" x="1057" y="62" width="16" height="38"/>
+  <g class="fade fd4">
+    <rect x="0" y="268" width="1200" height="52" fill="#0a0e14" stroke="#13202b" stroke-width="1"/>
+    <rect x="0" y="268" width="1200" height="1" fill="#1a222c"/>
+    <text x="36" y="300" class="mono" fill="#6b7c8c" font-size="13">TICK</text>
+    <text x="88" y="300" class="mono" fill="#00ff6a" font-size="14">BTC</text>
+    <text x="132" y="300" class="mono" fill="#8fa3b8" font-size="14">98,420.12</text>
+    <text x="268" y="300" class="mono" fill="#00ff6a" font-size="14">ETH</text>
+    <text x="312" y="300" class="mono" fill="#8fa3b8" font-size="14">3,842.55</text>
+    <text x="448" y="300" class="mono" fill="#00ff6a" font-size="14">SOL</text>
+    <text x="492" y="300" class="mono" fill="#8fa3b8" font-size="14">178.93</text>
+    <text x="900" y="300" class="mono" fill="#3d5166" font-size="12">LIVE &#183; UTC</text>
   </g>
-
-  <!-- Moving average -->
-  <g id="ma" class="fade3">
-    <polyline class="maGlow"
-      points="96,200 140,188 184,182 228,174 272,168 316,160 360,152 404,146
-              796,146 840,138 884,130 928,122 972,116 1016,108 1060,100 1104,92 1148,86"/>
-  </g>
-
-  <!-- Price tag -->
-  <g id="priceTag" class="fade3" transform="translate(0,0)">
-    <rect class="pricetagBg" x="1056" y="78" width="118" height="20" rx="2"/>
-    <text class="pricetagText" x="1064" y="92">MARK · LIVE</text>
-  </g>
-
-  <!-- Center copy -->
-  <g id="hero" class="fade4">
-    <text class="title" x="600" y="148" text-anchor="middle">MAX</text>
-    <text class="subtitle" x="600" y="182" text-anchor="middle">TRADE · BUILD · ITERATE</text>
-  </g>
-
-  <!-- Blinking terminal cursor after subtitle -->
-  <rect class="cursor fade5" x="712" y="168" width="10" height="16" rx="1"/>
-
-  <!-- Ticker bar -->
-  <g id="ticker" class="fade6">
-    <rect x="0" y="278" width="1200" height="42" fill="#06080c" opacity="0.92"/>
-    <line x1="0" y1="278" x2="1200" y2="278" stroke="#00c853" stroke-opacity="0.35"/>
-    <text class="tag" x="20" y="304">BTC</text>
-    <text class="tagUp" x="58" y="304">+1.12%</text>
-    <text class="tagDim" x="128" y="304">|</text>
-    <text class="tag" x="142" y="304">ETH</text>
-    <text class="tagUp" x="180" y="304">+0.64%</text>
-    <text class="tagDim" x="248" y="304">|</text>
-    <text class="tag" x="262" y="304">SOL</text>
-    <text class="tagUp" x="300" y="304">+2.08%</text>
-    <text class="tagDim" x="900" y="304">5M · 15M · 1H · 4H</text>
-    <text class="tagDim" x="1048" y="304">PINE v5/v6</text>
+  <g class="fade fd5" opacity="0.35" stroke="#00c853" stroke-width="1">
+    <line x1="600" y1="40" x2="600" y2="252"/>
   </g>
 </svg>
